@@ -27,6 +27,7 @@ export class ProductosComponent implements OnInit {
 
  obtenerProductos(): void {
   this.productoService.getProductos().subscribe(data => {
+    console.log("'Datos obtenidos de productos:", data);
     this.productos = data.filter((item: any) => item.precio); 
     this.productosFiltrados = [...this.productos];
   });
