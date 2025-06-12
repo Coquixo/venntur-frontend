@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ventuur-frontend": {
+    "venntur-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ventuur-frontend:build:production"
+              "buildTarget": "venntur-frontend:build:production"
             },
             "development": {
-              "buildTarget": "ventuur-frontend:build:development"
+              "buildTarget": "venntur-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
