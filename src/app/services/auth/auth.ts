@@ -12,7 +12,7 @@ export interface Credentials {
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://127.0.0.1:8080';
+  private baseUrl = 'http://localhost:8080';
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 

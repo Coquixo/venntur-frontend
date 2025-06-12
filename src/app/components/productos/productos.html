@@ -22,23 +22,14 @@
           <th scope="col" class="text-center">Nombre</th>
           <th scope="col" class="text-center">Descripción</th>
           <th scope="col" class="text-center">Precio</th>
-          <th scope="col" class="text-center">Imagen</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let producto of productosFiltrados" class="align-middle">
           <td class="fw-semibold">{{ producto.nombre }}</td>
-          <td>{{ producto.descripcion }}</td>
+
+          <td>{{ producto.descripcion_corta }}</td>
           <td class="text-success fw-bold">${{ producto.precio | number:'1.2-2' }}</td>
-          <td class="text-center">
-            <img
-              [src]="producto.imagen"
-              alt="Imagen de {{ producto.nombre }}"
-              class="img-thumbnail"
-              style="max-width: 120px; height: auto;"
-              loading="lazy"
-            />
-          </td>
         </tr>
         <tr *ngIf="productosFiltrados.length === 0">
           <td colspan="4" class="text-center text-muted py-4">

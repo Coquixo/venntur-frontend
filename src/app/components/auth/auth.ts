@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthStoreService } from '../../services/auth/auth-store';
 import { AuthService } from '../../services/auth/auth';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-auth',
@@ -17,7 +19,9 @@ export class AuthComponent {
 
   constructor(
     private authStore: AuthStoreService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router 
+
   ) {}
 
   onSubmit() {
@@ -30,10 +34,15 @@ export class AuthComponent {
               email: this.email,
               password: this.password,
             });
-            alert('Login exitoso');
+            this.router.navigate(['/productos']);
           },
           error: (err: any) => {
-            alert('Error en login: ' + err.message);
+            console.log("error", err);
+            if( err.status === 401) {
+              alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
+              return
+            } 
+            alert('Error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.');
           },
         });
     }

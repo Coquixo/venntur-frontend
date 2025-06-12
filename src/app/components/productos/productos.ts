@@ -22,21 +22,21 @@ export class ProductosComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Inicializando ProductosComponent");
-    // this.obtenerProductos();
+    this.obtenerProductos();
   }
 
-  obtenerProductos(): void {
-    this.productoService.getProductos().subscribe(data => {
-      this.productos = data.filter((item: any) => item.precio && item.imagen);
-      this.productosFiltrados = [...this.productos];
-    });
-  }
+ obtenerProductos(): void {
+  this.productoService.getProductos().subscribe(data => {
+    this.productos = data.filter((item: any) => item.precio); 
+    this.productosFiltrados = [...this.productos];
+  });
+}
 
-  buscar(): void {
-    const term = this.searchTerm.toLowerCase();
-    this.productosFiltrados = this.productos.filter(producto =>
-      producto.nombre.toLowerCase().includes(term) ||
-      producto.descripcion.toLowerCase().includes(term)
-    );
-  }
+buscar(): void {
+  const term = this.searchTerm.toLowerCase();
+  this.productosFiltrados = this.productos.filter(producto =>
+    producto.nombre.toLowerCase().includes(term) ||
+    (producto.descripcion_corta && producto.descripcion_corta.toLowerCase().includes(term))
+  );
+}
 }
