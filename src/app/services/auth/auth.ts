@@ -21,12 +21,8 @@ export class AuthService {
   login(creds: Credentials): Observable<any> {
     const url = `${this.baseUrl}/login`;
 
-    const body = new HttpParams().set('email', creds.email)
-    .set('password', creds.password);
-
-   return this.http.post(url, body.toString(), {
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded'
-        
+   return this.http.post(url, creds, {
+    headers: { 'Content-Type': "application/json"
      },
     withCredentials: true
   }).pipe(

@@ -31,7 +31,6 @@ export class AuthComponent {
               password: this.password,
             });
             alert('Login exitoso');
-            // Aquí redirige o actualiza UI
           },
           error: (err: any) => {
             alert('Error en login: ' + err.message);

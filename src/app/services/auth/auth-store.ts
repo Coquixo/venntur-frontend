@@ -13,7 +13,7 @@ export class AuthStoreService {
 
   setCredentials(creds: Credentials) {
     this.credentials = creds;
-    // También podrías guardar en localStorage si quieres persistir
+    sessionStorage.setItem('credentials', JSON.stringify(creds));
   }
 
   getCredentials(): Credentials | null {
