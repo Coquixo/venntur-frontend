@@ -1,0 +1,36 @@
+<div class="container py-5">
+  <h1 class="text-center fw-semibold mb-4">Proveedores</h1>
+
+  <div *ngIf="proveedores.length > 0">
+    <div *ngFor="let proveedor of proveedores" 
+          class="card shadow-lg w-100 mw-100 mb-4 p-3">
+      <h2 class="card-title text-primary fw-bold mb-3">
+        {{ proveedor.nombre }}
+      </h2>
+
+      <h5 class="text-muted mb-4 fst-italic">
+        {{ proveedor.tiene_actividades ? 'Con actividades' : 'Sin actividades' }}
+      </h5>
+
+      <ul *ngIf="proveedor.actividades.length > 0">
+        <li *ngFor="let actividad of proveedor.actividades" 
+            class="list-group-item p-2 mb-2 border rounded">
+          <span>{{ actividad.nombre }}</span> - {{ actividad.descripcion_corta }} 
+<strong>{{ actividad.precio ? (actividad.precio | currency:'EUR') : 'N/A' }}</strong>
+        </li>
+      </ul>
+
+      <div *ngIf="proveedor.actividades.length == 0">
+        <p>Este proveedor aún no tiene actividades.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Carga o sin resultados -->
+  <div *ngIf="proveedores.length == 0" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+</div>

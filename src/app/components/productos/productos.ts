@@ -8,7 +8,7 @@ import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.html',
-  styleUrls: ['./productos.css'],
+  // styleUrls: ['./productos.css'], //no need 
   standalone: true,
   imports: [CommonModule, FormsModule]
 })
@@ -47,7 +47,6 @@ async obtenerProductos(): Promise<{ success: boolean, error?: any }> {
 }
 
 verDetalles(producto: any): void {
-  console.log("Ver detalles del producto:", producto);
   this.router.navigate(['/producto', producto.id]);
 }
 
@@ -57,7 +56,7 @@ buscar(): void {
   const term = this.searchTerm.toLowerCase();
   this.productosFiltrados = this.productos.filter(producto =>
     producto.nombre.toLowerCase().includes(term) ||
-    (producto.descripcion_corta && producto.descripcion_corta.toLowerCase().includes(term))
+    (producto.descripcionCorta && producto.descripcionCorta.toLowerCase().includes(term))
   );
 }
 }

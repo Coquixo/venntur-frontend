@@ -13,22 +13,30 @@ import { Location } from '@angular/common'; // Importa Location para usar goBack
 })
 export class AppComponent {
   title = 'venntur';
-  showFooter = false; // corregí typo: showFoorter -> showFooter
+  showFooter = false;
 
-  constructor(private router: Router, private authService: AuthService, private location: Location) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private location: Location
+  ) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.showFooter = event.url !== '/'; // Mostrar footer si NO estamos en '/'
+        this.showFooter = event.url !== '/'; //show footer if we are not on the home page
       });
   }
 
   async ngOnInit() {
-    this.authService.logout()
+    this.authService.logout();
   }
 
   goToProductos() {
     this.router.navigate(['/productos']);
+  }
+
+  goToProveedores() {
+    this.router.navigate(['/proveedores']);
   }
   logout() {
     this.authService.logout().subscribe({
@@ -36,13 +44,14 @@ export class AppComponent {
         this.router.navigate(['/']);
       },
       error: (err) => {
-        console.log('Error al cerrar sesión:', err);
-        this.router.navigate(['/']); 
-       
+        console.error(err);
+        this.router.navigate(['/']);
       },
     });
   }
-  goBack():void {
-  this.location.back();
-  } 
+
+
+  goBack(): void {
+    this.location.back();
+  }
 }

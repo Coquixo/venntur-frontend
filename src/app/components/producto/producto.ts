@@ -23,7 +23,6 @@ export class ProductoComponent implements OnInit {
     if (id) {
       this.productoService.getProducto(id).subscribe({
         next: (producto) => {
-            console.log("Producto obtenido:", producto);
           this.producto = producto;
         },
         error: (err) => {

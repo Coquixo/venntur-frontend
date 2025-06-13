@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './auth.html',
-  styleUrls: ['./auth.css'],
+  // styleUrls: ['./auth.css'], // no need
 })
 export class AuthComponent {
   email = '';
@@ -41,7 +41,7 @@ export class AuthComponent {
             this.router.navigate(['/productos']);
           },
           error: (err: any) => {
-            console.log("error", err);
+
             if( err.status === 401) {
               alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
               return
