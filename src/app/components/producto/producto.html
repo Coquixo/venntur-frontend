@@ -6,11 +6,11 @@
       </h2>
       
       <h5 class="text-muted text-center mb-4 fst-italic">
-        {{ producto.descripcion_corta }}
+        {{ producto.descripcionCorta }}
       </h5>
 
       <p class="card-text mb-4">
-        {{ producto.descripcion_larga }}
+        {{ producto.descripcionLarga }}
       </p>
 
       <div class="d-flex justify-content-between align-items-center border-top pt-3">
@@ -18,7 +18,7 @@
           ${{ producto.precio  }}
         </span>
         <small class="text-secondary">
-          Proveedor: {{ producto.proveedor }}
+          Proveedor: {{ producto.proveedor.nombre }}
         </small>
       </div>
     </div>

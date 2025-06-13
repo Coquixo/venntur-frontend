@@ -39,8 +39,8 @@
           (click)="verDetalles(producto)"
         >
           <td class="fw-semibold">{{ producto.nombre }}</td>
-          <td>{{ producto.descripcion_corta }}</td>
-          <td class="text-success fw-bold">${{ producto.precio | number:'1.2-2' }}</td>
+          <td>{{ producto.descripcionCorta }}</td>
+          <td class="text-success fw-bold">${{ producto.precio }}</td>
         </tr>
         <tr *ngIf="productosFiltrados.length === 0">
           <td colspan="3" class="text-center text-muted py-4">
