@@ -35,7 +35,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let producto of productosFiltrados"
-          class="cursor-pointer"
+          style="cursor: pointer;"
           (click)="verDetalles(producto)"
         >
           <td class="fw-semibold">{{ producto.nombre }}</td>
