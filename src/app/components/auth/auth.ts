@@ -24,6 +24,10 @@ export class AuthComponent {
 
   ) {}
 
+  ngOnInit() {
+    this.authStore.clearCredentials();
+  }
+
   onSubmit() {
     if (this.email && this.password) {
       this.authService
@@ -32,7 +36,7 @@ export class AuthComponent {
           next: (res) => {
             this.authStore.setCredentials({
               email: this.email,
-              password: this.password,
+              //we can save token here if needed
             });
             this.router.navigate(['/productos']);
           },

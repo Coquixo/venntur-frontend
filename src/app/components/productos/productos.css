@@ -1,0 +1,53 @@
+.container {
+  height: 600px; /* altura fija, ajusta según necesites */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.table-responsive {
+  flex-grow: 1;  /* que la tabla ocupe el resto del espacio */
+  overflow-y: auto; /* scroll vertical si hay overflow */
+}
+
+.table-striped > tbody > tr > td,
+.table-striped > tbody > tr > th,
+.table-primary > tr > th {
+  border-right: 2px solid #0d6efd;
+}
+
+.table-striped > tbody > tr > td:last-child,
+.table-primary > tr > th:last-child {
+  border-right: none;
+}
+
+.table-striped td, 
+.table-striped th {
+
+  border: 1px solid #dee2e6;
+}
+
+.table-primary th {
+  border-bottom: 3px solid #0d6efd;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #f8f9fa;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap : 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.search-input {
+  /* debe ocupar todo el espacio disponible horizontalmente*/
+  width: 100%;
+  margin-bottom: 1rem; /* Espacio entre el input y la tabla */
+}
