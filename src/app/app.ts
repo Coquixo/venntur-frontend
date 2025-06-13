@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AuthService } from './services/auth/auth';
-import { Location } from '@angular/common'; // Importa Location para usar goBack
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,

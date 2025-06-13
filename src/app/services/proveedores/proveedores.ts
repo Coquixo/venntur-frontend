@@ -5,16 +5,14 @@ import { environment } from '../../../environment/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ProveedorService {
-    private baseUrl = environment.apiUrl;
-      private extensionUrl = "/api/proveedores";
+  private baseUrl = environment.apiUrl;
+  private extensionUrl = '/api/proveedores';
 
-
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) {}
 
   getProveedores(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}${this.extensionUrl}`, {
       withCredentials: true,
     });
   }
-
 }

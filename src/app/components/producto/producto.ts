@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductoService } from '../../services/producto/producto'; // ajusta el path si es necesario
+import { ProductoService } from '../../services/producto/producto';
 import { NgIf } from '@angular/common';
 
 

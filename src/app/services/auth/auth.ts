@@ -13,7 +13,7 @@ export interface Credentials {
   providedIn: 'root',
 })
 export class AuthService {
-    private baseUrl = environment.apiUrl;
+  private baseUrl = environment.apiUrl;
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 

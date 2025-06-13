@@ -5,7 +5,6 @@ import { AuthStoreService } from '../../services/auth/auth-store';
 import { AuthService } from '../../services/auth/auth';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-auth',
   standalone: true,
@@ -20,8 +19,7 @@ export class AuthComponent {
   constructor(
     private authStore: AuthStoreService,
     private authService: AuthService,
-    private router: Router 
-
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -41,12 +39,13 @@ export class AuthComponent {
             this.router.navigate(['/productos']);
           },
           error: (err: any) => {
-
-            if( err.status === 401) {
+            if (err.status === 401) {
               alert('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
-              return
-            } 
-            alert('Error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.');
+              return;
+            }
+            alert(
+              'Error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.'
+            );
           },
         });
     }

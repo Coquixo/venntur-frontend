@@ -6,11 +6,9 @@ import { environment } from '../../../environment/environment';
   providedIn: 'root',
 })
 export class ProductoService {
-  constructor(private http: HttpClient) {
-  }
-  private baseUrl = environment.apiUrl
-  private extensionUrl = "/api/actividades";
-
+  constructor(private http: HttpClient) {}
+  private baseUrl = environment.apiUrl;
+  private extensionUrl = '/api/actividades';
 
   getProductos() {
     return this.http.get<any[]>(`${this.baseUrl}${this.extensionUrl}`, {
