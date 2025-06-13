@@ -23,8 +23,15 @@ npm install
 El archivo /src/environment/environment.ts indica el dominio de la API, por defecto el backend está configurado para ser levantado en el siguiente puerto http://localhost:8080.
 En caso de haber modificado el puerto del backend, deberás actualizar el puerto en el archivo `src/environment/environment.ts`:
 
+## 3. Levantar el servidor
 
-## 3. Usuario de prueba
+Este comando levantará tu aplicación frontend en el puerto 4200.
+```bash
+    npm run serve
+```
+
+
+## 4. Usuario de prueba
 
 Puedes usar las siguientes credenciales para iniciar sesión en la aplicación:
 
